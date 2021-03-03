@@ -139,7 +139,4 @@ Desktop.ini
 # ESLint
 ######################
 .eslintcache
-/mvnw
-/mvnw.cmd
 /.idea/
-/.mvn/
