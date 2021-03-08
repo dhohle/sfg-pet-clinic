@@ -51,7 +51,7 @@ public class OwnerSDJpaService implements OwnerService {
     }
 
     @Override
-    public void deleteAllById(Long aLong) {
+    public void deleteById(Long aLong) {
         this.ownerRepository.deleteById(aLong);
     }
 
