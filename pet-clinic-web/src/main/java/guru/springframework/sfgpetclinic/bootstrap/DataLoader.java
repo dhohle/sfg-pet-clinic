@@ -15,14 +15,14 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-//    @Autowired (annotation not needed anymore)
+    //    @Autowired (annotation not needed anymore)
     public DataLoader(OwnerService ownerService, VetService vetService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
     }
 
     @Override
-    public void run(String... args)  {
+    public void run(String... args) {
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
@@ -48,8 +48,6 @@ public class DataLoader implements CommandLineRunner {
         vetService.save(vet2);
 
         System.out.println("Loaded Vets...");
-
-
 
 
     }
