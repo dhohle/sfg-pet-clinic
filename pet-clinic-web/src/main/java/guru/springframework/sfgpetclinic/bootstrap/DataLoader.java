@@ -36,6 +36,10 @@ public class DataLoader implements CommandLineRunner {
 
     }
 
+    private void usingBuilderPattern(){
+        System.out.println(Owner.builder().id(1L).address("xxx").city("sss").build());
+    }
+
     private void loadData() {
         // PetTypes
         PetType dog = new PetType();
