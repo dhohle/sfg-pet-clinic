@@ -44,6 +44,7 @@ class OwnerServiceMapTest {
         assertEquals(id, savedOwner.getId());
     }
 
+    @Test
     void saveNoId(){
         Owner savedOwner = ownerServiceMap.save(Owner.OwnerBuilder().build());
         assertNotNull(savedOwner);
