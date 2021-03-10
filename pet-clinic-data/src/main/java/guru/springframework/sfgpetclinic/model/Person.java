@@ -10,10 +10,9 @@ import javax.persistence.MappedSuperclass;
 @Getter
 @Setter
 @NoArgsConstructor
-
 public class Person extends BaseEntity {
 
-    @Builder
+    @Builder(builderMethodName = "PersonBuilder")
     public Person(Long id, String firstName, String lastName){
         super(id);
         this.firstName = firstName;

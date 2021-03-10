@@ -37,7 +37,7 @@ public class DataLoader implements CommandLineRunner {
     }
 
     private void usingBuilderPattern(){
-        System.out.println(Owner.builder().id(1L).address("xxx").city("sss").build());
+        System.out.println(Owner.OwnerBuilder().id(1L).address("xxx").city("sss").build());
     }
 
     private void loadData() {
