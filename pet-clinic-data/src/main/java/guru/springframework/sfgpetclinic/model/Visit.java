@@ -23,4 +23,8 @@ public class Visit extends BaseEntity {
     private Pet pet;
 
 
+    public boolean isNew(){
+        return this.getId() == null;
+    }
+
 }
