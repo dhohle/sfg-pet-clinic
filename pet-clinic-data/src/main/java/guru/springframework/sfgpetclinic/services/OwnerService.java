@@ -8,5 +8,7 @@ public interface OwnerService extends CrudService<Owner, Long> {
 
     Owner findByLastName(final String lastName);
 
+    List<Owner> findAllByLastNameLike(final String lastName);
+
     Owner findByFirstName(String lastName);
 }

@@ -77,6 +77,11 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     }
 
     @Override
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        throw new RuntimeException("Not implemented");
+    }
+
+    @Override
     public Owner findByFirstName(String firstname) {
         return this.findAll()
                 .stream()
