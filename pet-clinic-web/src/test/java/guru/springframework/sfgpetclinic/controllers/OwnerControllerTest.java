@@ -13,6 +13,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -78,6 +79,18 @@ class OwnerControllerTest {
                 .andExpect(view().name("redirect:/owners/1"))
 //                .andExpect(model().attribute("owners", hasSize(2)))
                 ;
+    }
+
+    @Test
+    public void processFindFormEmptyReturnMany() throws Exception{
+        when(ownerService.findAllByLastNameLike(anyString())).thenReturn(Arrays.asList(Owner.OwnerBuilder().id(1L).build(),
+                Owner.OwnerBuilder().id(2L).build()));
+        mockMvc.perform(get("/owners")
+        .param("lastName", ""))
+                .andExpect(status().isOk())
+                .andExpect(view().name("owners/ownersList"))
+                .andExpect(model().attribute("selections", hasSize(2)));
+
     }
 
     @Test
